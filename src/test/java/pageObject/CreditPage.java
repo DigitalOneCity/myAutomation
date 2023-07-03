@@ -11,18 +11,16 @@ public class CreditPage extends BasePage {
 	private WebElement cvvFiled ;
 	@FindBy(css = "#personalId")
 	private WebElement idFiled ;
-	@FindBy(css = "#Track2CardNo")
-	private WebElement sendBtn ;
-	@FindBy(css = "#expYear")
-	private WebElement selectYearBtn ;
-	@FindBy(css = "#expMonth")
-	private WebElement selectMonthBtn ;
+//	@FindBy(css = "#expYear")
+//	private WebElement selectYearBtn ;
+//	@FindBy(css = "#expMonth")
+//	private WebElement selectMonthBtn ;
 	@FindBy(css = "#submitBtn")
 	private WebElement sumbitBtn ;
-	@FindBy(css = "#cancelBtn")
-	private WebElement cancelBtn ;
-	@FindBy (css=".elementor-element.elementor-element-5e491455")
-	private WebElement logoBtn;
+//	@FindBy(css = "")
+//	private WebElement cancelBtn ;
+//	@FindBy (css="")
+//	private WebElement logoBtn;
 
 
 	public CreditPage(WebDriver driver) {
@@ -36,25 +34,21 @@ public class CreditPage extends BasePage {
 	public void cvvLine(String num) {
 		fillText(cvvFiled, num);
 	}
-
-	public void sendClick() {
-		sendBtn.click();
+	
+	public void idLine(String num) {
+		fillText(idFiled, num);
 	}
 
 	public void sumbitClick() {
 		sumbitBtn.click();
 	}
 
-	public void cancelClick() {
-		cancelBtn.click();
-	}
+//	public void cancelClick() {
+//		cancelBtn.click();
+//	}
 
-	public void idLine(String num) {
-		fillText(idFiled, num);
-	}
-	
-	public void logoPage() {
-		click(logoBtn);
-		
-	}
+//	public void logoPage() {
+//		click(logoBtn);
+//		
+//	}
 }

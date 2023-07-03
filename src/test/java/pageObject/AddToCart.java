@@ -1,34 +1,40 @@
 package pageObject;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class AddToCart extends BasePage {
-	WebElement btnLogin = driver.findElement(By.cssSelector(".xoo-wsc-modal"));
+//	WebElement btnLogin = driver.findElement(By.cssSelector(""));
 
-
-	@FindBy(css = ".attachment-woocommerce_thumbnail.size-woocommerce_thumbnail")
+	@FindBy(css = "body a[href='https://updateplugins1.wpengine.com/product/auto-test/']:last-child")
+	private WebElement addProductBtn;
+	@FindBy(css = ".single_add_to_cart_button.button.alt.wp-element-button")
 	private WebElement addCartBtn;
-	@FindBy(css = "[name='add-to-cart']")
-	private WebElement addProduct;
-	@FindBy(css = ".xoo-wsc-ft-btn.xoo-wsc-ft-btn-checkout")
-	private WebElement movePayPage;
+	@FindBy(css = ".button.wc-forward.wp-element-button")
+	private WebElement CartBtn;
+	@FindBy(css = ".checkout-button.button.alt.wc-forward.wp-element-button")
+	private WebElement moveToPayBtn;
+	
+	
 
 	public AddToCart(WebDriver driver) {
 		super(driver);
 	}
-
-	public void addToCart() {
+	
+	public void addProduct() {
+		click(addProductBtn);
+	}
+	
+	public void addToCartPage() {
 		click(addCartBtn);
 	}
-
-	public void addProduct() {
-		click(addProduct);
+	
+	public void CartPage() {
+		click(CartBtn);
 	}
 
-	public void movePayPage() {
-		click(movePayPage);
+	public void moveToPayPage() {
+		click(moveToPayBtn);
 	}
-
+	
 }

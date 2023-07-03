@@ -1,59 +1,97 @@
 package pageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 
 public class MainPage extends BasePage {
+	Actions actions = new Actions(driver);
 
-	@FindBy (css=".elementor-column.elementor-col-16.elementor-inner-column.elementor-element.elementor-element-cd8d3fb")
+
+	@FindBy (css="[class^='elementor-flip']>[name='main_events']")
+	private WebElement eventsBtn;
+	@FindBy (css="[class^='elementor-flip']>[name='main_business']")
+	private WebElement BusinessPromotionBtn;
+	@FindBy (css="[class^='elementor-flip']>[name='main_agrot']")
 	private WebElement agrotBtn;
-	@FindBy (css=".elementor-column.elementor-col-16.elementor-inner-column.elementor-element.elementor-element-a1b0173")
-	private WebElement eventBtn;
-	@FindBy (css=".elementor-column.elementor-col-16.elementor-inner-column.elementor-element.elementor-element-06b697a")
-	private WebElement menuimBtn;
-	@FindBy (css=".elementor-column.elementor-col-16.elementor-inner-column.elementor-element.elementor-element-53e2225")
-	private WebElement rechesBtn;
-	@FindBy (css=".elementor-column.elementor-col-16.elementor-inner-column.elementor-element.elementor-element-a79a9f6")
-	private WebElement michrazBtn;
-	@FindBy (css=".elementor-column.elementor-col-16.elementor-inner-column.elementor-element.elementor-element-cd7c0e6")
-	private WebElement handasaBtn;
-
+	@FindBy (css="[class^='elementor-flip']>[name='main_dat']")
+	private WebElement datBtn;
+	@FindBy (css="[class^='elementor-flip']>[name='main_psychology']")
+	private WebElement psychologyBtn;
+	@FindBy (css="[class^='elementor-flip']>[name='main_micrazim']")
+	private WebElement micrazimBtn;
+	@FindBy (css="[class^='elementor-flip']>[name='main_productsAndServices']")
+	private WebElement productsAndServicesBtn;
+	@FindBy (css=".main_futer>li:nth-child(1) > a")
+	private WebElement TermsOfUseBtn;
+	@FindBy (css=".main_futer>li:nth-child(2) > a")
+	private WebElement siteMapBtn;
+	@FindBy (css=".main_futer>li:nth-child(3) > a")
+	private WebElement accessibilityStatementBtn;
+	//	@FindBy (css="")
+	//	private WebElement searchBtn;
 
 
 	public MainPage(WebDriver driver) {
 		super(driver);
 	}
 
-	public void agrotPage() {
-		ClickOnElement(agrotBtn);
-		//		driver.navigate().back();
+	public void eventsPage() {
+		actions.moveToElement(eventsBtn).perform();
+		actions.click().perform();
+		driver.navigate().back();
 	}
 
-	public void eventPage() {
-		click(eventBtn);
+	public void BusinessPromotionPage() {
+		actions.moveToElement(BusinessPromotionBtn).perform();
+		actions.click().perform();
+		driver.navigate().back();
+	}
+
+	public void agrotPage() {
+		actions.moveToElement(agrotBtn).perform();
+		actions.click().perform();
+		driver.navigate().back();
+	}
+
+	public void datPage() {
+		click(datBtn);
 //		driver.navigate().back();
 	}
 
-	public void menuimPage() {
-		click(menuimBtn);
+	public void psychologyPage() {
+		click(psychologyBtn);
 		driver.navigate().back();
 	}
 
-	public void rechesPage() {
-		click(rechesBtn);
+	public void micrazimPage() {
+		click(micrazimBtn);
 		driver.navigate().back();
 	}
 
-	public void michrazPage() {
-		click(michrazBtn);
+	public void productsAndServicesPage() {
+		click(productsAndServicesBtn);
 		driver.navigate().back();
 	}
 
-	public void handasaPage() {
-		click(handasaBtn);
+	public void TermsOfUsePage() {
+		click(TermsOfUseBtn);
 		driver.navigate().back();
 	}
-	
-	
+
+	public void siteMapPage() {
+		click(siteMapBtn);
+		driver.navigate().back();
+	}
+
+	public void accessibilityStatementPage() {
+		click(accessibilityStatementBtn);
+		driver.navigate().back();
+	}
+
+	//	public void searchPage() {
+	//		click(searchBtn);
+	//	}
+
 }

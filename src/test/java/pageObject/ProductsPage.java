@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ProductsPage extends BasePage {
 
-	@FindBy(css = ".xoo-wsc-ft-btn.xoo-wsc-ft-btn-checkout")
+	@FindBy(css = "")
 	private WebElement checkoutBtn;
 
 

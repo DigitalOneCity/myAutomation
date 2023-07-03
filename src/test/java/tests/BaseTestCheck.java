@@ -5,12 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeClass;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-
-public class BaseTest {
+public class BaseTestCheck {
 	WebDriver driver;
 
 	@BeforeClass
@@ -20,18 +18,16 @@ public class BaseTest {
 		chromeOptions.addArguments("remote-allow-origins=*");
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().window().maximize();
-		driver.get("https://updateplugins1.wpengine.com/shop/?captcha=test");
-//		WebDriver driver = new ChromeDriver();
-//		driver.manage().window().maximize();
-//		driver.get("https://updateplugins1.wpengine.com/shop/");
-		
-} 
+		driver.get("https://paykaldev.wpengine.com/sajur");	
+	} 
+
 	public void waiting(long milli) {
 		try {
 			Thread.sleep(milli);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+
 	}
 
 	public void selectByValue(WebElement el , String text) {
@@ -46,8 +42,4 @@ public class BaseTest {
 	public void ClickOnElement(WebElement el){
 		el.click();
 	}
-	
-	
-	
-
 }
